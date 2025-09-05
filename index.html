@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabaadpe - Turning Waste into Value</title>
+    <meta name="description" content="Transparent scrap rates, doorstep pickup, instant payments, and eco-friendly recycling across Delhi NCR.">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1C9E6F',
+                        secondary: '#0E6E4F',
+                        accent: '#F3F8F5',
+                        text: '#1A1A1A',
+                        muted: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .eco-pattern {
+            background-image: radial-gradient(circle, #1C9E6F 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.05;
+        }
+        .shadow-soft {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+    </style>
+</head>
+<body class="font-sans text-text bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://huggingface.co/spaces/Avi11/scrap-collection-service/resolve/main/images/Kabaadpe Logo Cropped-Photoroom.png" alt="Kabaadpe Logo" class="h-10">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition">Home</a>
+                <a href="#services" class="font-medium hover:text-primary transition">Services</a>
+                <a href="#rates" class="font-medium hover:text-primary transition">Live Rates</a>
+                <a href="#process" class="font-medium hover:text-primary transition">Process</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-2xl font-medium transition shadow-soft">
+                Schedule Pickup
+            </a>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Services</a>
+                <a href="#rates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Live Rates</a>
+                <a href="#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Process</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="eco-pattern absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-20 md:py-32 relative">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Sell Your Scrap Online – Doorstep Pickup</h1>
+                <p class="text-xl text-muted mb-8">Transparent pricing, instant payments, eco-friendly recycling.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/contact" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-2xl font-medium transition shadow-lg">
+                        Schedule Pickup
+                    </a>
+                    <a href="/rates" class="bg-white hover:bg-accent text-primary border border-primary px-6 py-3 rounded-2xl font-medium transition shadow-soft">
+                        Check Live Rates
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section id="services" class="py-16 bg-accent">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Kabaadpe?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="dollar-sign" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Transparent Pricing</h3>
+                    <p class="text-muted">No hidden charges, fair rates based on current market prices.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Instant UPI/Cash Payment</h3>
+                    <p class="text-muted">Get paid immediately after weighing your scrap materials.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="leaf" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Eco-Friendly Disposal</h3>
+                    <p class="text-muted">Responsible recycling that helps protect our environment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Certified & Insured</h3>
+                    <p class="text-muted">Licensed operations with full insurance coverage.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Trained Staff</h3>
+                    <p class="text-muted">Professional team handling your scrap with care.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                        <i data-feather="calendar" class="text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Flexible Timing</h3>
+                    <p class="text-muted">Schedule pickups at your convenience, 7 days a week.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rates Table -->
+    <section id="rates" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Live Scrap Rates</h2>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-primary/10">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Material</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Price (₹/kg)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Min. Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Iron/Steel</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹18 - ₹25</td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Aluminium</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹80 - ₹120</td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Copper</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹400 - ₹550</td>
+                                <td class="px-6 py-4 whitespace-nowrap">2 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Plastic (PET)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹15 - ₹25</td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Paper/Cardboard</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹8 - ₹15</td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">E-waste</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹50 - ₹300*</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1 item</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-3 bg-accent text-sm text-muted">
+                    *Rates are indicative; final price after on-site weighing. E-waste prices vary by item type and condition.
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="/rates" class="text-primary font-medium hover:underline">View detailed rates & calculator →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 bg-accent">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Schedule Pickup</h3>
+                    <p class="text-muted">Book online or call us. We'll confirm your pickup time.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Weigh & Sort</h3>
+                    <p class="text-muted">Our team arrives, sorts your scrap, and weighs it professionally.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Get Paid</h3>
+                    <p class="text-muted">Instant cash or UPI payment. We handle the recycling!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up">
+                    <img src="http://static.photos/technology/640x360/1" alt="E-Waste Recycling" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Waste Recycling</h3>
+                        <p class="text-muted mb-4">Responsible disposal of electronics including computers, phones, and appliances.</p>
+                        <a href="/services" class="text-primary font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/industry/640x360/2" alt="Metal Scrap" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Metal Scrap</h3>
+                        <p class="text-muted mb-4">Iron, steel, aluminium, copper, and other metals at competitive rates.</p>
+                        <a href="/services" class="text-primary font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/office/640x360/3" alt="Paper Recycling" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Paper & Cardboard</h3>
+                        <p class="text-muted mb-4">Eco-friendly recycling of all paper products from offices and homes.</p>
+                        <a href="/services" class="text-primary font-medium hover:underline">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="/services" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-2xl text-white bg-primary hover:bg-secondary shadow-lg">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-accent">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-soft" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">A</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Amit Sharma</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted">"Kabaadpe made selling my old appliances so easy. They arrived on time, paid fair prices, and even helped carry heavy items. Will definitely use again!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">P</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Priya Malhotra</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted">"As a small business, we generate lots of cardboard waste. Kabaadpe provides regular pickups with transparent pricing. Highly recommend their service!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-soft" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">R</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Rajiv Kapoor</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted">"Their e-waste recycling service is excellent. They provided proper documentation for our office IT disposal, which was important for compliance."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">We Serve Delhi NCR</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
+                    <div class="bg-accent py-3 px-4 rounded-xl font-medium">Delhi</div>
+                    <div class="bg-accent py-3 px-4 rounded-xl font-medium">Noida</div>
+                    <div class="bg-accent py-3 px-4 rounded-xl font-medium">Gurgaon</div>
+                    <div class="bg-accent py-3 px-4 rounded-xl font-medium">Ghaziabad</div>
+                    <div class="bg-accent py-3 px-4 rounded-xl font-medium">Faridabad</div>
+                </div>
+                <div class="mt-8 text-center text-muted">
+                    <p>We're expanding to new areas regularly. Call us to check availability in your locality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section id="contact" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">₹100 Bonus on Your First Order</h2>
+                    <p class="text-xl opacity-90">Use code WELCOME100 when booking your first scrap pickup.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Preferred Pickup Date</label>
+                            <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Pickup Address</label>
+                            <textarea id="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" required></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="scrap" class="block text-sm font-medium text-gray-700 mb-1">Scrap Items (Type & Approx. Quantity)</label>
+                            <textarea id="scrap" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" required></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white px-6 py-3 rounded-2xl font-medium transition shadow-lg">
+                                Book Pickup
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://huggingface.co/spaces/Avi11/scrap-collection-service/resolve/main/images/Kabaadpe Logo Cropped-Photoroom.png" alt="Kabaadpe Logo" class="h-10">
+                    </div>
+                    <p class="text-accent mb-4">Turning Waste into Value</p>
+                    <p class="text-accent/80">Transparent pricing, instant payments, eco-friendly recycling across Delhi NCR.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-accent hover:text-white transition">Home</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Services</a></li>
+                        <li><a href="/rates" class="text-accent hover:text-white transition">Live Rates</a></li>
+                        <li><a href="/about" class="text-accent hover:text-white transition">About Us</a></li>
+                        <li><a href="/contact" class="text-accent hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services" class="text-accent hover:text-white transition">Doorstep Collection</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">E-Waste Recycling</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Paper Recycling</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Metal Scrap</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Plastic Recycling</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3 text-accent">
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <a href="tel:+918218088873" class="hover:text-white transition">+91 8218088873</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <a href="mailto:contact@kabaadpe.com" class="hover:text-white transition">contact@kabaadpe.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <span>Vikas Puri, New Delhi 110018</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="clock" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <span>Mon-Sun, 8AM - 8PM</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-primary/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-accent/80 text-sm mb-4 md:mb-0">© 2025 Kabaadpe. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="/privacy" class="text-accent hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="/terms" class="text-accent hover:text-white text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918218088873" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i data-feather="message-circle" class="text-white w-6 h-6"></i>
+    </a>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.replace();
+            } else {
+                icon.setAttribute('data-feather', 'x');
+                feather.replace();
+            }
+        });
+    </script>
+</body>
+</html>

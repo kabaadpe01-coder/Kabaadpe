@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Scrap Rates | Kabaadpe</title>
+    <meta name="description" content="Current scrap metal, paper, plastic and e-waste prices in Delhi NCR. Check our live rates calculator for instant estimates.">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .rate-change-up {
+            color: #10B981;
+        }
+        .rate-change-down {
+            color: #EF4444;
+        }
+        .rate-change-neutral {
+            color: #6B7280;
+        }
+    </style>
+</head>
+<body class="font-sans text-text bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://huggingface.co/spaces/Avi11/scrap-collection-service/resolve/main/images/Kabaadpe Logo Cropped-Photoroom.png" alt="Kabaadpe Logo" class="h-10">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/#home" class="font-medium hover:text-primary transition">Home</a>
+                <a href="/#services" class="font-medium hover:text-primary transition">Services</a>
+                <a href="/#rates" class="font-medium text-primary">Live Rates</a>
+                <a href="/#process" class="font-medium hover:text-primary transition">Process</a>
+                <a href="/#contact" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-2xl font-medium transition shadow-soft">
+                Schedule Pickup
+            </a>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Home</a>
+                <a href="/#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Services</a>
+                <a href="/#rates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Live Rates</a>
+                <a href="/#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Process</a>
+                <a href="/#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-accent">
+        <div class="container mx-auto px-4 py-20 md:py-24">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Live Scrap Rates</h1>
+                <p class="text-xl text-muted">Current market prices updated daily. Use our calculator to estimate your scrap value.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rates Table -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <h2 class="text-2xl font-bold mb-4 md:mb-0">Today's Scrap Prices</h2>
+                <div class="flex items-center text-sm text-muted">
+                    <i data-feather="clock" class="w-4 h-4 mr-2"></i>
+                    Last updated: <span class="font-medium ml-1" id="update-time">Today, 9:30 AM</span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-primary/10">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Material</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Price (₹/kg)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">24h Change</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Min. Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Iron/Steel (Heavy)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹20 - ₹28</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-up">+2.5% <i data-feather="arrow-up" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Iron/Steel (Light)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹15 - ₹22</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-neutral">0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Aluminium (Clean)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹95 - ₹125</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-down">-1.2% <i data-feather="arrow-down" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Aluminium (Mixed)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹75 - ₹100</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-down">-1.5% <i data-feather="arrow-down" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Copper (Wire)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹450 - ₹575</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-up">+3.8% <i data-feather="arrow-up" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">2 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Copper (Pipe)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹400 - ₹500</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-up">+2.1% <i data-feather="arrow-up" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">2 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Plastic (PET Bottles)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹18 - ₹25</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-neutral">0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Plastic (HDPE)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹20 - ₹30</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-up">+1.5% <i data-feather="arrow-up" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">5 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Paper (Newspaper)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹10 - ₹15</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-neutral">0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Cardboard (Corrugated)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹8 - ₹12</td>
+                                <td class="px-6 py-4 whitespace-nowrap rate-change-down">-0.5% <i data-feather="arrow-down" class="w-4 h-4 inline"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap">10 kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-3 bg-accent text-sm text-muted">
+                    *Rates are indicative; final price after on-site weighing. Prices fluctuate daily based on market conditions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="py-16 bg-accent">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Scrap Value Calculator</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-2xl p-6 shadow-soft" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="material" class="block text-sm font-medium text-muted mb-1">Select Material</label>
+                        <select id="material" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary">
+                            <option value="">Select material</option>
+                            <option value="iron_heavy">Iron/Steel (Heavy)</option>
+                            <option value="iron_light">Iron/Steel (Light)</option>
+                            <option value="aluminium_clean">Aluminium (Clean)</option>
+                            <option value="aluminium_mixed">Aluminium (Mixed)</option>
+                            <option value="copper_wire">Copper (Wire)</option>
+                            <option value="copper_pipe">Copper (Pipe)</option>
+                            <option value="pet">Plastic (PET Bottles)</option>
+                            <option value="hdpe">Plastic (HDPE)</option>
+                            <option value="newspaper">Paper (Newspaper)</option>
+                            <option value="cardboard">Cardboard (Corrugated)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quantity" class="block text-sm font-medium text-muted mb-1">Quantity (kg)</label>
+                        <input type="number" id="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-primary focus:border-primary" placeholder="Enter weight">
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-primary/10 rounded-xl">
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">Estimated Value:</span>
+                        <span class="text-2xl font-bold text-primary" id="estimated-value">₹0</span>
+                    </div>
+                    <div class="mt-2 text-sm text-muted" id="calculation-note"></div>
+                </div>
+                <button id="calculate-btn" class="mt-6 w-full bg-primary hover:bg-secondary text-white px-6 py-3 rounded-2xl font-medium transition shadow-soft">
+                    Calculate
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Waste Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">E-Waste & Special Items</h2>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-primary/10">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Item</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Price Range</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wider">Condition Factors</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Laptop</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹500 - ₹3,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Age, brand, working condition, battery health</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Smartphone</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹200 - ₹2,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Model, screen condition, functionality</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Refrigerator</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹800 - ₹3,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Size, working condition, gas recovery</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">AC (Split/Window)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹1,500 - ₹5,000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Ton capacity, working condition, copper content</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Washing Machine</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹600 - ₹2,500</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Type (top/front load), working parts</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">CRT TV</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹100 - ₹300</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Size, working condition</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">LED/LCD TV</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹300 - ₹1,500</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Size, brand, working condition</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Car Battery</td>
+                                <td class="px-6 py-4 whitespace-nowrap">₹800 - ₹1,200</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-muted">Size, lead content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-3 bg-accent text-sm text-muted">
+                    *E-waste prices vary significantly based on condition, brand, and components. Our team will assess your items during pickup.
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="/contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-2xl text-white bg-primary hover:bg-secondary shadow-lg">
+                    Get Exact Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-accent">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pricing & Pickup FAQs</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-medium">Why do scrap prices change daily?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5 transform transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-muted">Scrap metal prices are tied to global commodity markets which fluctuate based on supply, demand, and economic factors. Our rates reflect these daily changes to ensure fair pricing for both our customers and our business.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up" data-aos-delay="50">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-medium">How is the final price determined?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5 transform transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-muted">Our team weighs your materials on calibrated scales during pickup. The price is calculated based on the current rate per kg for each material type. Clean, sorted materials typically command higher prices than mixed scrap.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-toggle w-full px-6 py-4
+</body>
+</html>

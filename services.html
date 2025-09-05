@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Kabaadpe</title>
+    <meta name="description" content="Comprehensive scrap collection and recycling services across Delhi NCR - e-waste, metal, paper, plastic and more.">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            background-color: #1C9E6F;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-text bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://huggingface.co/spaces/Avi11/scrap-collection-service/resolve/main/images/Kabaadpe Logo Cropped-Photoroom.png" alt="Kabaadpe Logo" class="h-10">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/#home" class="font-medium hover:text-primary transition">Home</a>
+                <a href="/#services" class="font-medium text-primary">Services</a>
+                <a href="/#rates" class="font-medium hover:text-primary transition">Live Rates</a>
+                <a href="/#process" class="font-medium hover:text-primary transition">Process</a>
+                <a href="/#contact" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-2xl font-medium transition shadow-soft">
+                Schedule Pickup
+            </a>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Home</a>
+                <a href="/#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Services</a>
+                <a href="/#rates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Live Rates</a>
+                <a href="/#process" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Process</a>
+                <a href="/#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-accent">
+        <div class="container mx-auto px-4 py-20 md:py-24">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Our Recycling Services</h1>
+                <p class="text-xl text-muted">Comprehensive scrap collection solutions for homes and businesses across Delhi NCR.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/10" alt="E-Waste Recycling" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="cpu" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">E-Waste Recycling</h3>
+                        <p class="text-muted mb-4">Responsible disposal of electronics including computers, phones, appliances, and other electronic items with proper documentation.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Data destruction for storage devices</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Certificate of recycling provided</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Bulk pickup for offices available</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/industry/640x360/11" alt="Metal Scrap" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="tool" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">Metal Scrap Collection</h3>
+                        <p class="text-muted mb-4">We buy all types of metal scrap including iron, steel, aluminium, copper, brass, and more at competitive market rates.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>On-site weighing with calibrated scales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Construction site cleanouts available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Industrial quantities welcome</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/office/640x360/12" alt="Paper Recycling" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="file-text" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">Paper & Cardboard</h3>
+                        <p class="text-muted mb-4">Eco-friendly recycling of all paper products including office paper, newspapers, magazines, cardboard boxes, and packaging materials.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Regular pickup schedules for businesses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Secure document destruction service</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Bulk pickup for events and exhibitions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="http://static.photos/education/640x360/13" alt="Plastic Recycling" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="droplet" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">Plastic Recycling</h3>
+                        <p class="text-muted mb-4">We accept all types of plastic waste including PET bottles, HDPE containers, plastic packaging, and other recyclable plastics.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Sorted by plastic type for better recycling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Bulk collection for manufacturing units</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Clean and dirty plastic accepted</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/indoor/640x360/14" alt="Furniture Removal" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="home" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">Appliance & Furniture Removal</h3>
+                        <p class="text-muted mb-4">We help dispose of old furniture, appliances, and household items responsibly, with parts recycled whenever possible.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Free pickup for large quantities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Disassembly service available</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Office clearances and renovations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/automotive/640x360/15" alt="Vehicle Scrapping" class="w-full h-48 object-cover">
+                        <div class="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg service-icon transition">
+                            <i data-feather="truck" class="text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-10">
+                        <h3 class="text-xl font-semibold mb-3">Vehicle Scrapping Assistance</h3>
+                        <p class="text-muted mb-4">End-of-life vehicle disposal with proper documentation and maximum value recovery through authorized recycling centers.</p>
+                        <ul class="space-y-2 text-muted text-sm">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>RC cancellation paperwork handled</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Free towing for qualifying vehicles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="w-4 h-4 text-primary mr-2 mt-0.5"></i>
+                                <span>Battery and hazardous waste disposal</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Recycle Your Scrap?</h2>
+            <p class="text-xl mb-8 opacity-90">Schedule a pickup today and get instant payment for your scrap materials.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-2xl text-primary bg-white hover:bg-accent shadow-lg">
+                    Book Pickup
+                </a>
+                <a href="tel:+918218088873" class="inline-flex items-center px-8 py-3 border border-white text-base font-medium rounded-2xl text-white hover:bg-white/10">
+                    <i data-feather="phone" class="w-5 h-5 mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://huggingface.co/spaces/Avi11/scrap-collection-service/resolve/main/images/Kabaadpe Logo Cropped-Photoroom.png" alt="Kabaadpe Logo" class="h-10">
+                    </div>
+                    <p class="text-accent mb-4">Turning Waste into Value</p>
+                    <p class="text-accent/80">Transparent pricing, instant payments, eco-friendly recycling across Delhi NCR.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-accent hover:text-white transition">Home</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Services</a></li>
+                        <li><a href="/rates" class="text-accent hover:text-white transition">Live Rates</a></li>
+                        <li><a href="/about" class="text-accent hover:text-white transition">About Us</a></li>
+                        <li><a href="/contact" class="text-accent hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services" class="text-accent hover:text-white transition">Doorstep Collection</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">E-Waste Recycling</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Paper Recycling</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Metal Scrap</a></li>
+                        <li><a href="/services" class="text-accent hover:text-white transition">Plastic Recycling</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-3 text-accent">
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <a href="tel:+918218088873" class="hover:text-white transition">+91 8218088873</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <a href="mailto:contact@kabaadpe.com" class="hover:text-white transition">contact@kabaadpe.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <span>Vikas Puri, New Delhi 110018</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="clock" class="w-5 h-5 mr-2 mt-0.5"></i>
+                            <span>Mon-Sun, 8AM - 8PM</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-primary/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-accent/80 text-sm mb-4 md:mb-0">© 2025 Kabaadpe. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="/privacy" class="text-accent hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="/terms" class="text-accent hover:text-white text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918218088873" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i data-feather="message-circle" class="text-white w-6 h-6"></i>
+    </a>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.replace();
+            } else {
+                icon.setAttribute('data-feather', 'x');
+                feather.replace();
+            }
+        });
+    </script>
+</body>
+</html>
